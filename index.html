@@ -1,174 +1,253 @@
-<!doctype html>
-<html lang="ar" dir="rtl" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Studio</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&amp;family=Outfit:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
-  <style>
-    * { font-family: 'Cairo', sans-serif; }
-    .font-brand { font-family: 'Outfit', sans-serif; }
-    .gradient-bg { background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%); }
-    .card-glow { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px); transition: all 0.3s ease; }
-    .card-glow:hover { background: rgba(255,255,255,0.07); border-color: rgba(99, 102, 241, 0.4); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1); }
-    .accent-gradient { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
-    .text-gradient { background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-up { animation: fadeUp 0.6s ease forwards; opacity: 0; }
-    .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
-    .delay-4 { animation-delay: 0.4s; } .delay-5 { animation-delay: 0.5s; } .delay-6 { animation-delay: 0.6s; }
-    .pulse-dot { animation: pulse 2s infinite; }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-    .animate-float { animation: float 3s ease-in-out infinite; }
-    @keyframes glow-pulse { 0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); } 50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.7); } }
-    .animate-glow { animation: glow-pulse 2s ease-in-out infinite; }
-  </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full">
-  <div id="app" class="w-full h-full overflow-auto gradient-bg text-white">
-   <!-- Hero -->
-   <header class="relative px-6 py-16 md:py-24 text-center overflow-hidden">
-    <div class="absolute inset-0 opacity-20">
-     <div class="absolute top-20 left-1/4 w-72 h-72 bg-indigo-500 rounded-full blur-[120px]"></div>
-     <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-purple-600 rounded-full blur-[150px]"></div>
-    </div>
-    <div class="relative z-10 max-w-3xl mx-auto">
-     <div class="animate-fade-up mb-8">
-      <div class="animate-float inline-block">
-       <svg width="300" height="200" viewbox="0 0 300 200" class="mx-auto animate-glow"><!-- Monitor bezel --> <rect x="40" y="20" width="220" height="140" rx="8" fill="none" stroke="url(#grad1)" stroke-width="2" /> <!-- Screen --> <rect x="50" y="30" width="200" height="115" rx="4" fill="rgba(99, 102, 241, 0.1)" /> <!-- Screen content lines --> <line x1="65" y1="45" x2="150" y2="45" stroke="#6366f1" stroke-width="2" /> <line x1="65" y1="60" x2="225" y2="60" stroke="rgba(99, 102, 241, 0.6)" stroke-width="1.5" /> <line x1="65" y1="72" x2="225" y2="72" stroke="rgba(99, 102, 241, 0.6)" stroke-width="1.5" /> <line x1="65" y1="84" x2="200" y2="84" stroke="rgba(99, 102, 241, 0.6)" stroke-width="1.5" /> <line x1="65" y1="96" x2="210" y2="96" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1" /> <line x1="65" y1="106" x2="185" y2="106" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1" /> <!-- Keyboard base --> <rect x="45" y="155" width="210" height="30" rx="4" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" /> <!-- Keyboard keys --> <rect x="55" y="162" width="8" height="8" rx="1" fill="rgba(99, 102, 241, 0.3)" /> <rect x="68" y="162" width="8" height="8" rx="1" fill="rgba(99, 102, 241, 0.3)" /> <rect x="81" y="162" width="8" height="8" rx="1" fill="rgba(99, 102, 241, 0.3)" /> <rect x="55" y="175" width="8" height="8" rx="1" fill="rgba(99, 102, 241, 0.2)" /> <rect x="68" y="175" width="8" height="8" rx="1" fill="rgba(99, 102, 241, 0.2)" /> <!-- Gradient definition --> <defs>
-         <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
-         </lineargradient>
-        </defs>
-       </svg>
-      </div>
-     </div>
-     <div class="animate-fade-up">
-      <h1 id="hero-title" class="font-brand text-5xl md:text-7xl font-900 tracking-tight mb-4"><span class="text-gradient">Nova</span> <span class="text-white">Studio</span></h1>
-     </div>
-     <p id="hero-subtitle" class="animate-fade-up delay-1 text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">شريكك الرقمي لكل خدمات التصميم والمحتوى</p>
-     <div class="animate-fade-up delay-2 flex flex-wrap justify-center gap-4 mb-8">
-      <span class="flex items-center gap-2 text-sm text-gray-400"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>متاح طوال الأسبوع</span> <span class="flex items-center gap-2 text-sm text-gray-400"><i data-lucide="globe" style="width:14px;height:14px;"></i>شغل أونلاين في كل مكان</span> <span class="flex items-center gap-2 text-sm text-gray-400"><i data-lucide="percent" style="width:14px;height:14px;"></i>خصومات للطلبات الكبيرة</span>
-     </div><a id="cta-btn" href="#contact" class="animate-fade-up delay-3 inline-block accent-gradient px-8 py-3 rounded-full font-bold text-white hover:opacity-90 transition-opacity shadow-lg shadow-indigo-500/30">تواصل معنا الآن</a>
-    </div>
-   </header><!-- Services -->
-   <section class="px-6 py-16 max-w-6xl mx-auto">
-    <h2 class="text-center text-3xl font-bold mb-12 animate-fade-up">خدماتنا</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="services-grid">
-    </div>
-   </section><!-- Why Us -->
-   <section class="px-6 py-16 max-w-4xl mx-auto text-center">
-    <h2 class="text-2xl font-bold mb-8 text-gradient">ليه تختارنا؟</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-     <div class="card-glow rounded-2xl p-6"><i data-lucide="zap" class="mx-auto mb-3 text-indigo-400" style="width:32px;height:32px;"></i>
-      <h3 class="font-bold mb-2">سرعة في التنفيذ</h3>
-      <p class="text-sm text-gray-400">نلتزم بالمواعيد ونسلم شغلك في أسرع وقت</p>
-     </div>
-     <div class="card-glow rounded-2xl p-6"><i data-lucide="sparkles" class="mx-auto mb-3 text-purple-400" style="width:32px;height:32px;"></i>
-      <h3 class="font-bold mb-2">جودة عالية</h3>
-      <p class="text-sm text-gray-400">تصاميم احترافية تزود التفاعل وتميّزك</p>
-     </div>
-     <div class="card-glow rounded-2xl p-6"><i data-lucide="heart-handshake" class="mx-auto mb-3 text-pink-400" style="width:32px;height:32px;"></i>
-      <h3 class="font-bold mb-2">أسعار مناسبة</h3>
-      <p class="text-sm text-gray-400">خصومات مميزة للطلبات الكبيرة والمتكررة</p>
-     </div>
-    </div>
-   </section><!-- Contact -->
-   <section id="contact" class="px-6 py-16 max-w-2xl mx-auto text-center">
-    <h2 class="text-2xl font-bold mb-4">جاهز تبدأ؟</h2>
-    <p class="text-gray-400 mb-8">تواصل معنا دلوقتي واحصل على عرض سعر مجاني</p>
-    <div class="flex flex-wrap justify-center gap-4">
-     <a href="https://wa.me/201515474939" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 px-6 py-3 rounded-full font-bold transition-colors"><i data-lucide="message-circle" style="width:20px;height:20px;"></i>واتساب</a> <a href="https://m.me/1AoF2H1nHW" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full font-bold transition-colors"><i data-lucide="send" style="width:20px;height:20px;"></i>ماسنجر</a>
-    </div>
-   </section><!-- Footer -->
-   <footer class="text-center py-8 text-gray-500 text-sm border-t border-white/5">
-    <p class="font-brand font-bold text-lg text-white mb-1">زاد المعرفة</p>
-    <p>© 2025 جميع الحقوق محفوظة</p>
-   </footer>
-  </div>
-  <script>
-const services = [
-  { icon: "monitor-smartphone", title: "إدارة صفحات والرد على الرسائل", desc: "إدارة احترافية لصفحاتك والرد السريع على العملاء" },
-  { icon: "file-text", title: "تصميم CV احترافي", desc: "سيرة ذاتية مميزة تلفت انتباه أصحاب العمل" },
-  { icon: "mic", title: "تفريغ صوتي", desc: "تحويل الصوت إلى كتابة بدقة عالية" },
-  { icon: "book-open", title: "كتابة وتنسيق أبحاث", desc: "أبحاث وملخصات منسقة باحترافية" },
-  { icon: "palette", title: "تصميمات Canva احترافية", desc: "تصاميم جذابة باستخدام كانفا" },
-  { icon: "layout", title: "بوستات سوشيال ميديا", desc: "منشورات تزيد التفاعل على صفحاتك" },
-  { icon: "award", title: "شهادات ودعوات", desc: "تصميم شهادات تقدير ودعوات أنيقة" },
-  { icon: "file-output", title: "تحويل Word إلى PDF", desc: "تحويل ملفاتك باحترافية وتنسيق مثالي" },
-  { icon: "image", title: "أغلفة فيسبوك ويوتيوب", desc: "أغلفة احترافية تعكس هويتك" },
-  { icon: "pen-tool", title: "كتابة محتوى وأفكار", desc: "محتوى إبداعي وأفكار جديدة لصفحاتك" },
-  { icon: "table", title: "ملفات PDF وجداول مذاكرة", desc: "جداول منظمة وملفات تساعدك على التفوق" },
-  { icon: "brain", title: "خدمات الذكاء الاصطناعي", desc: "صور وخدمات متقدمة بالـ AI" },
-];
+export default function NovaStudioWebsite() {
+  const services = [
+    "تصميم بوستات",
+    "عروض تقديمية",
+    "تصميم CV",
+    "تصميم أغلفة فيسبوك ويوتيوب",
+    "تحويل Word إلى PDF",
+    "تصميم شهادات ودعوات",
+    "خدمات الذكاء الاصطناعي",
+    "كتابة محتوى"
+  ];
 
-const grid = document.getElementById('services-grid');
-services.forEach((s, i) => {
-  const div = document.createElement('div');
-  div.className = `card-glow rounded-2xl p-5 animate-fade-up delay-${(i % 6) + 1}`;
-  div.innerHTML = `<i data-lucide="${s.icon}" class="text-indigo-400 mb-3" style="width:28px;height:28px;"></i><h3 class="font-bold mb-1 text-base">${s.title}</h3><p class="text-sm text-gray-400">${s.desc}</p>`;
-  grid.appendChild(div);
-});
+  const portfolio = [
+    "بوستات سوشيال",
+    "عروض احترافية",
+    "تصميمات شهادات",
+    "أغلفة صفحات وقنوات"
+  ];
 
-lucide.createIcons();
+  return (
+    <div className="min-h-screen bg-[#07111f] text-white font-sans">
+      {/* Navbar */}
+      <nav className="flex items-center justify-between px-8 py-5 border-b border-yellow-700/30 sticky top-0 bg-[#07111f]/90 backdrop-blur z-50">
+        <h1 className="text-3xl font-bold text-yellow-400">Nova Studio</h1>
 
-// Element SDK
-const defaultConfig = {
-  hero_title: "Nova Studio",
-  hero_subtitle: "شريكك الرقمي لكل خدمات التصميم والمحتوى",
-  cta_text: "تواصل معنا الآن",
-  background_color: "#0f0f1a",
-  accent_color: "#6366f1",
-  text_color: "#ffffff",
-  card_color: "#1a1a2e",
-  secondary_action_color: "#a78bfa",
-  font_family: "Cairo",
-  font_size: 16
-};
+        <div className="hidden md:flex gap-8 text-sm">
+          <a href="#services" className="hover:text-yellow-400 transition">الخدمات</a>
+          <a href="#portfolio" className="hover:text-yellow-400 transition">أعمالنا</a>
+          <a href="#pricing" className="hover:text-yellow-400 transition">الأسعار</a>
+          <a href="#contact" className="hover:text-yellow-400 transition">تواصل معنا</a>
+        </div>
+      </nav>
 
-window.elementSdk.init({
-  defaultConfig,
-  onConfigChange: async (config) => {
-    const c = { ...defaultConfig, ...config };
-    document.getElementById('hero-title').innerHTML = `<span class="text-gradient">${c.hero_title.split(' ')[0] || 'Nova'}</span> <span>${c.hero_title.split(' ').slice(1).join(' ') || 'Studia'}</span>`;
-    document.getElementById('hero-subtitle').textContent = c.hero_subtitle;
-    document.getElementById('cta-btn').textContent = c.cta_text;
-    document.getElementById('app').style.fontFamily = `${c.font_family}, Cairo, sans-serif`;
-    const base = c.font_size;
-    document.querySelector('h1').style.fontSize = `${base * 3.5}px`;
-    document.getElementById('hero-subtitle').style.fontSize = `${base * 1.2}px`;
-  },
-  mapToCapabilities: (config) => {
-    const c = { ...defaultConfig, ...config };
-    return {
-      recolorables: [
-        { get: () => c.background_color, set: (v) => { c.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
-        { get: () => c.card_color, set: (v) => { c.card_color = v; window.elementSdk.setConfig({ card_color: v }); } },
-        { get: () => c.text_color, set: (v) => { c.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
-        { get: () => c.accent_color, set: (v) => { c.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
-        { get: () => c.secondary_action_color, set: (v) => { c.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); } },
-      ],
-      borderables: [],
-      fontEditable: { get: () => c.font_family, set: (v) => { c.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
-      fontSizeable: { get: () => c.font_size, set: (v) => { c.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
-    };
-  },
-  mapToEditPanelValues: (config) => {
-    const c = { ...defaultConfig, ...config };
-    return new Map([
-      ["hero_title", c.hero_title],
-      ["hero_subtitle", c.hero_subtitle],
-      ["cta_text", c.cta_text]
-    ]);
-  }
-});
-</script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f9c46e0a410defa',t:'MTc3ODQ1MTA1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+      {/* Hero */}
+      <section className="px-8 md:px-16 py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 className="text-5xl font-extrabold leading-tight mb-6">
+            خدمات أونلاين <span className="text-yellow-400">احترافية</span>
+          </h2>
+
+          <p className="text-gray-300 text-lg leading-8 mb-8">
+            نصمم، نكتب، وننجز لك كل أعمالك أونلاين بسرعة وجودة عالية.
+          </p>
+
+          <div className="flex gap-4 flex-wrap">
+            <a
+              href="#contact"
+              className="bg-yellow-400 text-black px-6 py-3 rounded-2xl font-bold hover:scale-105 transition inline-block"
+            >
+              اطلب الآن
+            </a>
+
+            <a
+              href="https://wa.me/201515474939"
+              target="_blank"
+              className="border border-yellow-400 text-yellow-400 px-6 py-3 rounded-2xl hover:bg-yellow-400 hover:text-black transition inline-block"
+            >
+              واتساب: 01515474939
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mt-10">
+            <div className="bg-[#101c2f] p-5 rounded-2xl border border-yellow-700/20">
+              <h3 className="text-yellow-400 text-2xl font-bold">+250</h3>
+              <p className="text-gray-400">تصميم</p>
+            </div>
+
+            <div className="bg-[#101c2f] p-5 rounded-2xl border border-yellow-700/20">
+              <h3 className="text-yellow-400 text-2xl font-bold">95%</h3>
+              <p className="text-gray-400">رضا العملاء</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-br from-yellow-400/20 to-transparent rounded-3xl p-8 border border-yellow-700/20 shadow-2xl">
+          <div className="bg-[#101c2f] rounded-3xl p-8 space-y-5">
+            <div className="flex justify-between items-center">
+              <h3 className="text-2xl font-bold">Nova Studio</h3>
+              <span className="text-yellow-400">Premium</span>
+            </div>
+
+            <div className="space-y-3 text-gray-300">
+              <p>✔ تصميمات سوشيال ميديا</p>
+              <p>✔ عروض تقديمية احترافية</p>
+              <p>✔ تصميم CV</p>
+              <p>✔ خدمات PDF و Word</p>
+              <p>✔ أغلفة فيسبوك ويوتيوب</p>
+            </div>
+
+            <div className="bg-yellow-400 text-black text-center py-3 rounded-2xl font-bold mt-6">
+              جودة + سرعة + احترافية
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="grid md:grid-cols-4 gap-5 px-8 md:px-16 py-10">
+        {[
+          "تسليم سريع",
+          "تعديلات مجانية",
+          "دعم مستمر",
+          "أسعار مناسبة"
+        ].map((feature, index) => (
+          <div
+            key={index}
+            className="bg-[#101c2f] rounded-2xl p-6 text-center border border-yellow-700/20 hover:-translate-y-1 transition"
+          >
+            <p className="text-yellow-400 font-bold text-lg">{feature}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* Services */}
+      <section id="services" className="px-8 md:px-16 py-20">
+        <h2 className="text-4xl font-bold text-center mb-14">
+          خدماتنا
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="bg-[#101c2f] border border-yellow-700/20 rounded-3xl p-6 hover:scale-105 transition duration-300"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-yellow-400/20 flex items-center justify-center text-yellow-400 text-2xl mb-5">
+                ✨
+              </div>
+
+              <h3 className="text-xl font-bold mb-3">{service}</h3>
+
+              <p className="text-gray-400 text-sm leading-7 mb-5">
+                خدمة احترافية بجودة عالية وتسليم سريع.
+              </p>
+
+              <a
+                href="https://wa.me/201515474939"
+                target="_blank"
+                className="block w-full bg-yellow-400 text-black py-3 rounded-2xl font-bold hover:opacity-90 text-center"
+              >
+                اطلب الخدمة
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section id="portfolio" className="px-8 md:px-16 py-20 bg-[#0d1727]">
+        <h2 className="text-4xl font-bold text-center mb-14">
+          أعمالنا السابقة
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-6">
+          {portfolio.map((item, index) => (
+            <div
+              key={index}
+              className="h-56 rounded-3xl bg-gradient-to-br from-yellow-400/20 to-[#101c2f] border border-yellow-700/20 flex items-center justify-center text-center text-xl font-bold hover:scale-105 transition"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="px-8 md:px-16 py-20">
+        <h2 className="text-4xl font-bold text-center mb-14">
+          الأسعار
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            { title: "بوست سوشيال", price: "50 جنيه" },
+            { title: "تصميم CV", price: "70 جنيه" },
+            { title: "عرض تقديمي", price: "100 جنيه" }
+          ].map((plan, index) => (
+            <div
+              key={index}
+              className="bg-[#101c2f] border border-yellow-700/20 rounded-3xl p-8 text-center hover:-translate-y-2 transition"
+            >
+              <h3 className="text-2xl font-bold mb-4">{plan.title}</h3>
+
+              <p className="text-4xl font-extrabold text-yellow-400 mb-8">
+                {plan.price}
+              </p>
+
+              <a
+                href="https://wa.me/201515474939"
+                target="_blank"
+                className="block bg-yellow-400 text-black px-6 py-3 rounded-2xl font-bold w-full text-center"
+              >
+                اطلب الآن
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="px-8 md:px-16 py-20 bg-[#0d1727]">
+        <div className="max-w-4xl mx-auto bg-[#101c2f] border border-yellow-700/20 rounded-3xl p-10">
+          <h2 className="text-4xl font-bold text-center mb-10">
+            اطلب خدمتك الآن
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <input
+              type="text"
+              placeholder="الاسم"
+              className="bg-[#07111f] border border-yellow-700/20 rounded-2xl p-4 outline-none"
+            />
+
+            <input
+              type="text"
+              placeholder="رقم الواتساب"
+              className="bg-[#07111f] border border-yellow-700/20 rounded-2xl p-4 outline-none"
+            />
+          </div>
+
+          <textarea
+            placeholder="اكتب تفاصيل الطلب"
+            rows="5"
+            className="w-full mt-6 bg-[#07111f] border border-yellow-700/20 rounded-2xl p-4 outline-none"
+          />
+
+          <a
+            href="https://wa.me/201515474939"
+            target="_blank"
+            className="block w-full mt-6 bg-yellow-400 text-black py-4 rounded-2xl text-lg font-bold hover:opacity-90 text-center"
+          >
+            إرسال الطلب
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-yellow-700/20 py-8 text-center text-gray-400">
+        <div className="mb-4 space-y-2">
+          <p>واتساب: 01515474939</p>
+          <a href="https://www.facebook.com/share/1AoF2H1nHW/" target="_blank" className="text-yellow-400 hover:underline">
+            صفحتنا على فيسبوك
+          </a>
+        </div>
+        <h3 className="text-2xl font-bold text-yellow-400 mb-3">
+          Nova Studio
+        </h3>
+
+        <p>شغل احترافي… يفرق.</p>
+      </footer>
+    </div>
+  );
+}
