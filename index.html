@@ -103,47 +103,46 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full">
-  <div id="app" class="w-full h-full overflow-auto" style="background: linear-gradient(160deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a1a2e 100%);"><!-- WhatsApp Button -->
-   <div class="whatsapp-btn" id="whatsapp-btn" onclick="openWhatsApp()">
-    <i data-lucide="message-circle" style="width:28px;height:28px;"></i>
+  <div id="app" class="w-full h-full overflow-auto" style="background: linear-gradient(160deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a1a2e 100%);">
+   <!-- WhatsApp Button -->
+   <div class="whatsapp-btn" id="whatsapp-btn" onclick="openWhatsApp()"><i data-lucide="message-circle" style="width:28px;height:28px;"></i>
    </div><!-- Main Page -->
-   <div id="main-page" class="w-full h-full"><!-- Nav -->
+   <div id="main-page" class="w-full h-full">
+    <!-- Nav -->
     <nav class="sticky top-0 z-50 border-b" style="background: rgba(26,26,46,0.92); backdrop-filter: blur(12px); border-color: rgba(218,165,32,0.2);">
      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-3">
-       <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #daa520, #ffd700);"><i data-lucide="sparkles" style="width:20px;height:20px;color:#1a1a2e;"></i>
+       <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #daa520, #ffd700);">
+        <i data-lucide="sparkles" style="width:20px;height:20px;color:#1a1a2e;"></i>
        </div><span id="nav-title" class="font-outfit text-2xl font-bold text-white tracking-tight">Nova <span class="shimmer-text">Studio</span></span>
       </div>
-      <div class="flex items-center gap-2"><a href="#services" class="text-gray-400 hover:text-yellow-400 px-3 py-2 text-sm transition-colors">الخدمات</a> <a href="#how" class="text-gray-400 hover:text-yellow-400 px-3 py-2 text-sm transition-colors">كيف نعمل</a> <a href="#testimonials" class="text-gray-400 hover:text-yellow-400 px-3 py-2 text-sm transition-colors">آراء العملاء</a>
+      <div class="flex items-center gap-2">
+       <a href="#services" class="text-gray-400 hover:text-yellow-400 px-3 py-2 text-sm transition-colors">الخدمات</a> <a href="#testimonials" class="text-gray-400 hover:text-yellow-400 px-3 py-2 text-sm transition-colors">آراء العملاء</a>
       </div>
      </div>
     </nav><!-- Hero -->
     <header class="star-bg relative py-24 px-6 text-center">
      <div class="max-w-3xl mx-auto">
       <div class="animate-float inline-block mb-6">
-       <div class="w-20 h-20 rounded-2xl mx-auto flex items-center justify-center" style="background: linear-gradient(135deg, #daa520, #ffd700); box-shadow: 0 0 60px rgba(218,165,32,0.4);"><i data-lucide="palette" style="width:40px;height:40px;color:#1a1a2e;"></i>
+       <div class="w-20 h-20 rounded-2xl mx-auto flex items-center justify-center" style="background: linear-gradient(135deg, #daa520, #ffd700); box-shadow: 0 0 60px rgba(218,165,32,0.4);">
+        <i data-lucide="palette" style="width:40px;height:40px;color:#1a1a2e;"></i>
        </div>
       </div>
       <h1 id="hero-title" class="font-outfit text-5xl md:text-7xl font-800 text-white mb-4 leading-tight">Nova <span class="shimmer-text">Studio</span></h1>
       <p id="hero-sub" class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl mx-auto mb-8">نصمم، نكتب، وننجز لك كل أعمالك أونلاين بسرعة واحترافية</p>
-      <div class="flex flex-wrap gap-4 justify-center">
-       <a href="#services" class="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white font-bold transition-all hover:scale-105" style="background: linear-gradient(135deg, #daa520, #ffd700); color: #1a1a2e; box-shadow: 0 4px 30px rgba(218,165,32,0.4);"> اطلب الآن <i data-lucide="zap" style="width:18px;height:18px;"></i> </a> <button onclick="openWhatsApp()" class="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white font-bold transition-all hover:scale-105" style="background: linear-gradient(135deg, #25d366, #20ba5a); box-shadow: 0 4px 30px rgba(37,211,102,0.3);"> واتساب <i data-lucide="send" style="width:18px;height:18px;"></i> </button>
+      <div class="flex flex-wrap gap-4 justify-center"><a href="#services" class="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white font-bold transition-all hover:scale-105" style="background: linear-gradient(135deg, #daa520, #ffd700); color: #1a1a2e; box-shadow: 0 4px 30px rgba(218,165,32,0.4);"> اطلب الآن <i data-lucide="zap" style="width:18px;height:18px;"></i> </a> <button onclick="openWhatsApp()" class="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white font-bold transition-all hover:scale-105" style="background: linear-gradient(135deg, #25d366, #20ba5a); box-shadow: 0 4px 30px rgba(37,211,102,0.3);"> واتساب <i data-lucide="send" style="width:18px;height:18px;"></i> </button>
       </div>
      </div>
     </header><!-- Features Strip -->
     <div class="py-8 px-6" style="background: rgba(218,165,32,0.05); border-top: 1px solid rgba(218,165,32,0.1); border-bottom: 1px solid rgba(218,165,32,0.1);">
      <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="feature-item">
-       <i data-lucide="zap" style="width:20px;height:20px;color:#daa520;"></i> <span class="text-white font-bold text-sm">تسليم سريع جدًا</span>
+      <div class="feature-item"><i data-lucide="zap" style="width:20px;height:20px;color:#daa520;"></i> <span class="text-white font-bold text-sm">تسليم سريع جدًا</span>
       </div>
-      <div class="feature-item">
-       <i data-lucide="shield" style="width:20px;height:20px;color:#daa520;"></i> <span class="text-white font-bold text-sm">ضمان رضا العميل</span>
+      <div class="feature-item"><i data-lucide="shield" style="width:20px;height:20px;color:#daa520;"></i> <span class="text-white font-bold text-sm">ضمان رضا العميل</span>
       </div>
-      <div class="feature-item">
-       <i data-lucide="edit" style="width:20px;height:20px;color:#daa520;"></i> <span class="text-white font-bold text-sm">تعديلات مجانية</span>
+      <div class="feature-item"><i data-lucide="edit" style="width:20px;height:20px;color:#daa520;"></i> <span class="text-white font-bold text-sm">تعديلات مجانية</span>
       </div>
-      <div class="feature-item">
-       <i data-lucide="globe" style="width:20px;height:20px;color:#daa520;"></i> <span class="text-white font-bold text-sm">متاح لأي مكان</span>
+      <div class="feature-item"><i data-lucide="globe" style="width:20px;height:20px;color:#daa520;"></i> <span class="text-white font-bold text-sm">متاح لأي مكان</span>
       </div>
      </div>
     </div><!-- Services -->
@@ -151,7 +150,8 @@
      <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-800 text-white text-center mb-2">خدماتنا</h2>
       <p class="text-gray-500 text-center mb-14">اختار الخدمة اللي محتاجها واطلبها دلوقتي</p>
-      <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Cards injected by JS -->
+      <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+       <!-- Cards injected by JS -->
       </div>
      </div>
     </section><!-- Testimonials -->
@@ -163,7 +163,8 @@
      </div>
     </section><!-- Footer -->
     <footer class="border-t border-white/5 py-8 px-6 text-center">
-     <div class="mb-6"><a href="https://www.facebook.com/share/1AoF2H1nHW/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-2 rounded-full text-white font-bold transition-all hover:scale-105" style="background: rgba(24,119,242,0.2); border: 1px solid rgba(24,119,242,0.5);"> <i data-lucide="facebook" style="width:18px;height:18px;"></i> فيسبوك </a>
+     <div class="mb-6">
+      <a href="https://www.facebook.com/share/1AoF2H1nHW/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-2 rounded-full text-white font-bold transition-all hover:scale-105" style="background: rgba(24,119,242,0.2); border: 1px solid rgba(24,119,242,0.5);"> <i data-lucide="facebook" style="width:18px;height:18px;"></i> فيسبوك </a>
      </div>
      <p class="text-gray-600 text-sm">© 2025 <span id="footer-name">Nova Studio</span> — كل الحقوق محفوظة</p>
     </footer>
@@ -171,8 +172,7 @@
    <div id="form-page" class="w-full h-full hidden">
     <nav class="sticky top-0 z-50 border-b" style="background: rgba(26,26,46,0.92); backdrop-filter: blur(12px); border-color: rgba(218,165,32,0.2);">
      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-       <button onclick="goBack()" class="text-gray-400 hover:text-yellow-400 transition-colors"> <i data-lucide="arrow-right" style="width:24px;height:24px;"></i> </button> <span class="font-outfit text-xl font-bold text-white">نموذج الطلب</span>
+      <div class="flex items-center gap-3"><button onclick="goBack()" class="text-gray-400 hover:text-yellow-400 transition-colors"> <i data-lucide="arrow-right" style="width:24px;height:24px;"></i> </button> <span class="font-outfit text-xl font-bold text-white">نموذج الطلب</span>
       </div>
      </div>
     </nav>
@@ -182,26 +182,18 @@
        <h1 class="text-3xl md:text-4xl font-800 text-white mb-3">تقديم طلب جديد</h1>
        <p class="text-gray-400">ملّي البيانات بتاعتك وهنرد عليك في أسرع وقت</p>
       </div>
-      <form id="order-form" onsubmit="submitOrder(event)" class="rounded-2xl p-8" style="background: linear-gradient(160deg, #16213e, rgba(22,33,62,0.6)); border: 1px solid rgba(218,165,32,0.1);">
-       <!-- الاسم -->
-       <div class="mb-6">
-        <label class="block text-white font-bold mb-2">الاسم</label> <input type="text" id="form-name" required placeholder="اسمك الكامل" class="w-full px-4 py-3 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(218,165,32,0.2); color: white;" onchange="updateFormState()">
+      <form id="order-form" onsubmit="submitOrder(event)" class="rounded-2xl p-8" style="background: linear-gradient(160deg, #16213e, rgba(22,33,62,0.6)); border: 1px solid rgba(218,165,32,0.1);"><!-- الاسم -->
+       <div class="mb-6"><label class="block text-white font-bold mb-2">الاسم</label> <input type="text" id="form-name" required placeholder="اسمك الكامل" class="w-full px-4 py-3 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(218,165,32,0.2); color: white;" onchange="updateFormState()">
        </div><!-- رقم الواتساب -->
-       <div class="mb-6">
-        <label class="block text-white font-bold mb-2">رقم الواتساب</label> <input type="tel" id="form-whatsapp" required placeholder="01015474939" class="w-full px-4 py-3 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(218,165,32,0.2); color: white;" onchange="updateFormState()">
+       <div class="mb-6"><label class="block text-white font-bold mb-2">رقم الواتساب</label> <input type="tel" id="form-whatsapp" required placeholder="01015474939" class="w-full px-4 py-3 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(218,165,32,0.2); color: white;" onchange="updateFormState()">
        </div><!-- نوع الخدمة -->
-       <div class="mb-6">
-        <label class="block text-white font-bold mb-2">نوع الخدمة</label> <select id="form-service" required class="w-full px-4 py-3 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(218,165,32,0.2); color: white;" onchange="updateFormState()"> <option value="">-- اختار الخدمة --</option> <option value="تصميم بوستات">تصميم بوستات</option> <option value="كتابة وتنسيق الأبحاث">كتابة وتنسيق الأبحاث</option> <option value="تفريغ صوتي">تفريغ صوتي</option> <option value="تصميم CV">تصميم CV</option> <option value="أغلفة فيسبوك ويوتيوب">أغلفة فيسبوك ويوتيوب</option> <option value="تصميم شهادات ودعوات">تصميم شهادات ودعوات</option> <option value="تجهيز PDF">تجهيز PDF</option> <option value="خدمات الذكاء الاصطناعي">خدمات الذكاء الاصطناعي</option> <option value="كتابة محتوى">كتابة محتوى</option> </select>
+       <div class="mb-6"><label class="block text-white font-bold mb-2">نوع الخدمة</label> <select id="form-service" required class="w-full px-4 py-3 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(218,165,32,0.2); color: white;" onchange="updateFormState()"> <option value="">-- اختار الخدمة --</option> <option value="تصميم بوستات">تصميم بوستات</option> <option value="كتابة وتنسيق الأبحاث">كتابة وتنسيق الأبحاث</option> <option value="تفريغ صوتي">تفريغ صوتي</option> <option value="تصميم CV">تصميم CV</option> <option value="أغلفة فيسبوك ويوتيوب">أغلفة فيسبوك ويوتيوب</option> <option value="تصميم شهادات ودعوات">تصميم شهادات ودعوات</option> <option value="تجهيز PDF">تجهيز PDF</option> <option value="خدمات الذكاء الاصطناعي">خدمات الذكاء الاصطناعي</option> <option value="كتابة محتوى">كتابة محتوى</option> </select>
        </div><!-- وصف الطلب -->
-       <div class="mb-6">
-        <label class="block text-white font-bold mb-2">وصف الطلب</label> <textarea id="form-desc" required placeholder="اكتب تفاصيل طلبك... إيش محتاج بالضبط؟" rows="5" class="w-full px-4 py-3 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(218,165,32,0.2); color: white; resize: vertical;" onchange="updateFormState()"></textarea>
+       <div class="mb-6"><label class="block text-white font-bold mb-2">وصف الطلب</label> <textarea id="form-desc" required placeholder="اكتب تفاصيل طلبك... إيش محتاج بالضبط؟" rows="5" class="w-full px-4 py-3 rounded-lg" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(218,165,32,0.2); color: white; resize: vertical;" onchange="updateFormState()"></textarea>
        </div><!-- رفع ملف -->
-       <div class="mb-8">
-        <label class="block text-white font-bold mb-2">رفع ملف (اختياري)</label>
-        <div class="border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all hover:border-yellow-500" style="border-color: rgba(218,165,32,0.3);" onclick="document.getElementById('form-file').click()">
-         <input type="file" id="form-file" class="hidden" onchange="updateFileDisplay()">
-         <div>
-          <i data-lucide="upload-cloud" style="width:32px;height:32px;color:#daa520;margin:0 auto 8px;display:block;"></i>
+       <div class="mb-8"><label class="block text-white font-bold mb-2">رفع ملف (اختياري)</label>
+        <div class="border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all hover:border-yellow-500" style="border-color: rgba(218,165,32,0.3);" onclick="document.getElementById('form-file').click()"><input type="file" id="form-file" class="hidden" onchange="updateFileDisplay()">
+         <div><i data-lucide="upload-cloud" style="width:32px;height:32px;color:#daa520;margin:0 auto 8px;display:block;"></i>
           <p class="text-white font-bold">اضغط لاختيار ملف</p>
           <p class="text-gray-500 text-sm">أو اسحب الملف هنا</p>
          </div>
@@ -209,8 +201,7 @@
         <p id="file-name" class="text-green-400 text-sm mt-2 hidden">✓ تم تحميل الملف</p>
        </div><!-- زر الإرسال --> <button type="submit" id="submit-btn" class="w-full py-3 rounded-xl text-white font-bold transition-all hover:scale-[1.02]" style="background: linear-gradient(135deg, #daa520, #ffd700); color: #1a1a2e; box-shadow: 0 4px 30px rgba(218,165,32,0.3);"> إرسال الطلب </button> <!-- رسالة نجاح -->
        <div id="form-success" class="hidden mt-6 p-4 rounded-lg text-center" style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);">
-        <div class="flex items-center justify-center gap-2 text-green-400 font-bold">
-         <i data-lucide="check-circle" style="width:20px;height:20px;"></i> تم إرسال طلبك بنجاح! هنتواصل معاك قريب 🎉
+        <div class="flex items-center justify-center gap-2 text-green-400 font-bold"><i data-lucide="check-circle" style="width:20px;height:20px;"></i> تم إرسال طلبك بنجاح! هنتواصل معاك قريب 🎉
         </div>
        </div>
       </form>
@@ -218,24 +209,28 @@
     </div>
    </div><!-- Modal -->
    <div id="modal" class="fixed inset-0 z-[999] hidden items-center justify-center modal-backdrop p-4" style="display:none;">
-    <div class="w-full max-w-lg rounded-2xl p-8 relative" style="background: linear-gradient(160deg, #141428, #1a1a35); border: 1px solid rgba(139,92,246,0.2);"><button onclick="closeModal()" class="absolute top-4 left-4 text-gray-500 hover:text-white transition-colors"> <i data-lucide="x" style="width:24px;height:24px;"></i> </button>
+    <div class="w-full max-w-lg rounded-2xl p-8 relative" style="background: linear-gradient(160deg, #141428, #1a1a35); border: 1px solid rgba(139,92,246,0.2);">
+     <button onclick="closeModal()" class="absolute top-4 left-4 text-gray-500 hover:text-white transition-colors"> <i data-lucide="x" style="width:24px;height:24px;"></i> </button>
      <div id="modal-icon" class="w-16 h-16 rounded-2xl flex items-center justify-center mb-5 mx-auto" style="background:linear-gradient(135deg,#7c3aed,#a855f7);"></div>
      <h3 id="modal-title" class="text-2xl font-bold text-white text-center mb-3"></h3>
      <p id="modal-desc" class="text-gray-400 text-center leading-relaxed mb-8"></p><button id="modal-order-btn" onclick="orderService()" class="w-full py-3 rounded-xl text-white font-bold transition-all hover:scale-[1.02]" style="background: linear-gradient(135deg, #7c3aed, #a855f7); box-shadow: 0 4px 30px rgba(139,92,246,0.3);"> اطلب الخدمة </button>
      <div id="modal-success" class="hidden text-center py-3">
-      <div class="inline-flex items-center gap-2 text-green-400 font-bold"><i data-lucide="check-circle" style="width:20px;height:20px;"></i> تم إرسال طلبك بنجاح!
+      <div class="inline-flex items-center gap-2 text-green-400 font-bold">
+       <i data-lucide="check-circle" style="width:20px;height:20px;"></i> تم إرسال طلبك بنجاح!
       </div>
      </div>
     </div>
    </div>
   </div><!-- Modal -->
   <div id="modal" class="fixed inset-0 z-[999] hidden items-center justify-center modal-backdrop p-4" style="display:none;">
-   <div class="w-full max-w-lg rounded-2xl p-8 relative" style="background: linear-gradient(160deg, #141428, #1a1a35); border: 1px solid rgba(218,165,32,0.2);"><button onclick="closeModal()" class="absolute top-4 left-4 text-gray-500 hover:text-white transition-colors"> <i data-lucide="x" style="width:24px;height:24px;"></i> </button>
+   <div class="w-full max-w-lg rounded-2xl p-8 relative" style="background: linear-gradient(160deg, #141428, #1a1a35); border: 1px solid rgba(218,165,32,0.2);">
+    <button onclick="closeModal()" class="absolute top-4 left-4 text-gray-500 hover:text-white transition-colors"> <i data-lucide="x" style="width:24px;height:24px;"></i> </button>
     <div id="modal-icon" class="w-16 h-16 rounded-2xl flex items-center justify-center mb-5 mx-auto" style="background:linear-gradient(135deg,#daa520,#ffd700);"></div>
     <h3 id="modal-title" class="text-2xl font-bold text-white text-center mb-3"></h3>
     <p id="modal-desc" class="text-gray-400 text-center leading-relaxed mb-8"></p><button id="modal-order-btn" onclick="orderService()" class="w-full py-3 rounded-xl text-white font-bold transition-all hover:scale-[1.02]" style="background: linear-gradient(135deg, #daa520, #ffd700); color: #1a1a2e; box-shadow: 0 4px 30px rgba(218,165,32,0.3);"> اطلب الخدمة </button>
     <div id="modal-success" class="hidden text-center py-3">
-     <div class="inline-flex items-center gap-2 text-green-400 font-bold"><i data-lucide="check-circle" style="width:20px;height:20px;"></i> تم إرسال طلبك بنجاح!
+     <div class="inline-flex items-center gap-2 text-green-400 font-bold">
+      <i data-lucide="check-circle" style="width:20px;height:20px;"></i> تم إرسال طلبك بنجاح!
      </div>
     </div>
    </div>
@@ -488,5 +483,5 @@ window.elementSdk.init({
   ])
 });
 </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fa1cb5c5436e17b',t:'MTc3ODUwODkxMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fa1d78421b1e23b',t:'MTc3ODUwOTQxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
